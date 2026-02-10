@@ -1,47 +1,146 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f9f9f9;
+:root {
+  --olive: #6b8e6e;
+  --olive-dark: #556f58;
+  --bg: #f6f7f4;
+  --text: #2f2f2f;
+  --card: #ffffff;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* NAVIGATION */
+
 nav {
-  background: #1e90ff;
-  padding: 15px;
+  position: sticky;
+  top: 0;
+  background: white;
+  padding: 15px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid #e5e5e5;
+  z-index: 100;
 }
 
 nav h1 {
-  color: white;
+  margin: 0;
+  font-size: 1.3rem;
+  color: var(--olive-dark);
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  gap: 15px;
+  gap: 25px;
+  margin: 0;
 }
 
 nav a {
-  color: white;
   text-decoration: none;
-  font-weight: bold;
+  color: var(--text);
+  font-weight: 500;
 }
+
+nav a:hover {
+  color: var(--olive);
+}
+
+/* HERO */
 
 .hero {
+  padding: 100px 20px;
   text-align: center;
-  padding: 80px 20px;
-  background: linear-gradient(to right, #1e90ff, #00bcd4);
-  color: white;
+  background: linear-gradient(
+    rgba(107, 142, 110, 0.1),
+    rgba(107, 142, 110, 0.05)
+  );
 }
 
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+
+/* BUTTONS */
+
 .btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 25px;
-  background: white;
-  color: #1e90ff;
+  background: var(--olive);
+  color: white;
+  padding: 14px 30px;
+  border-radius: 30px;
   text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.btn:hover {
+  background: var(--olive-dark);
+}
+
+/* SECTIONS */
+
+section {
+  padding: 80px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+section h3 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+/* CARDS */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: var(--card);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+/* FOOTER */
+
+footer {
+  background: #ffffff;
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 1px solid #e5e5e5;
+  font-size: 0.9rem;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
 }
